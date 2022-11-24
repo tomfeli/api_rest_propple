@@ -18,7 +18,7 @@ const mailConfig={
     // do not fail on invalid certs
     rejectUnauthorized: false,
     },
-};
+}; 
 const listPerPage = 3;
 const claveJWTCli ="comoCliMeManejoPendejo(?)";
 const claveJWTVend = "comoVendMeMaoPindijo(?)";
