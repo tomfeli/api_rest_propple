@@ -1,0 +1,239 @@
+{ 
+   " id_usuario_cliente": "dsadas" ,
+    "alias": "asdasd",
+    "mail": "sdadas",
+    "user_password": "sadsad",
+    "phone": "dfsfsdfsd",
+    "url_image": "asdasdas",
+    "user_name": "dsafdsfsd",
+    "user_last_name": "dfsdfdsfsd",
+    "location": "sdfsdfsd",
+    "location_latitud": "dfasfsdfds",
+    "location_longitud": "dfsfsdfsd"
+    "visibility": 1
+    }
+post createUser(
+   { 
+            alias: req.body.alias,
+            mail: req.body.mail,
+            user_password: passEncriptada,
+            phone: req.body.phone,
+            url_image: req.body.url_image,
+            user_name: req.body.user_name,
+            user_last_name: req.body.user_last_name,
+            location: req.body.location,
+            location_latitud: req.body.location_latitud,
+            location_longitud: req.body.location_longitud,
+            visibility : req.body.visibility
+            }
+)
+put editPasswordWithOldPassword({
+   oldPass,
+   newPass
+})
+put editUsuario({
+
+})
+put deleteUser({
+   mail
+})cambia visibility de usuario
+put editPasswordFromMail({
+   newPass
+})
+
+get traerPublicacionesFiltradas() filtros
+{
+ubicacion
+estrellas=true descendente
+precio=true ascendente
+}
+
+post createPostulacion({
+   mailUser,
+   curriculum,
+   rubro
+})
+
+
+get getDetailedPublicacion({
+   idPublicacion
+}) returns {
+   title,
+   description,
+   precioXHora,
+   location,
+   locationLatitud,
+   locationLongitud,
+   cantTransacciones,
+}
+
+post createComentario({
+   idPublicacion,
+   userMail,
+   content
+})
+
+post  crearTransaccion({
+   mail,
+   idPublicacion 
+}) buscar id del prestador en base a la publicacion y 
+su id en base al mail. Setear el estado de la publicacion en Iniciado. 
+
+
+get getPaymentLink({
+
+})
+
+
+post  crearValuacionParaUnaTransaccion({
+   idTransaccion,
+   puntaje,
+   comentario,
+})
+
+post  crearPublicacion({
+   mail,
+   rubro,
+   title,
+   description,
+   precioXHora,
+   location,
+   locationLatitud,
+   locationLongitud,
+   0
+})identificar al usuario prestador
+mediante su mail y identificar
+al rubro mediante ...?
+
+
+put   updatePublicacion({
+   title,
+   description,
+   precioXhora,
+   location,
+   location_latitud,
+   location_longitud
+})
+
+put   formalizarReservaDeTransaccion({
+   id,
+   presupuesto,
+   fecha,
+   location,
+   location_latitud,
+   location_longitud
+   estado:presupuestado
+})llenar datos en tabla de transaccion en registro con ese id y cambiar estado a 
+presupuestado 
+
+put   finalizarReservaDeTransaccion({
+  id,
+  id_mercado_pago(?) 
+})cambia estado a
+ finalizado, llenar datos de publicacion 
+
+put   cancelarReserva({
+   id
+})cambiar estado de la publicacion a cancelada
+
+put   aprobarORechazarPostulacion({
+   
+})cambiar estado de la publicacion y crear usuario prestador de ser necesario. 
+
+
+
+
+--------------------
+---------------------
+-------------------
+
+USUARIOS:
+
+CLIENTES:
+
+ {
+    "mail":"propleeeee@yopmail.com",
+    "user_password"."324234"
+ }
+ 
+ {
+    "id_usuario_cliente": 2,
+    "alias": "paulo",
+    "mail": "bagog10785@steamoh.com",
+    "user_password": "Paulo3010",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbGlhcyI6InBhdWxvIiwibWFpbCI6ImJhZ29nMTA3ODVAc3RlYW1vaC5jb20iLCJwaG9uZSI6IjEyMzQ1Njc4OSIsImlhdCI6MTY1NDA0NDQwMn0.UDXvcUsu9xwaf0ptApCVo_6MvHkWhCIY_kwYnnzIrNU"
+  }
+
+ {
+    "id_usuario_cliente": "78hxgxywN1V29nLds4MEJzHhfn93",
+    "alias": "paulo23",
+    "mail": "xikaga1791@nzaif.com",
+    user_password": "Absu3010",
+    "token": eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbGlhcyI6InBhdWxvMjMiLCJtYWlsIjoieGlrYWdhMTc5MUBuemFpZi5jb20iLCJwaG9uZSI6IjEyMzQ1Njc4OSIsImlhdCI6MTY1NDMxNTkyOH0.9DKkDyuyGbPt8oJVK1f0jsz7vQvyI0sFcZi3yASRy68
+  }
+
+
+
+PRESTADOR:   
+
+    idcliente3 {
+      "alias": "b",
+      "mail": "b",
+      "contra":"b",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbGlhcyI6ImIiLCJtYWlsIjoiYiIsInBob25lIjoiZGZzZnNkZnNkIiwiaWF0IjoxNjUzMzUyOTgzfQ.NxGn4jc47NTNmlvr3lkcNhx6aeG2zPWsd-n2kU4_L68" 
+      
+  tokens viejos q andan:
+1:   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbGlhcyI6ImIiLCJtYWlsIjoiYiIsInBob25lIjoiMiIsImlhdCI6MTY1MjkwOTQ2MX0.An5NXZTzvBWpicLSMLO2CHkEi0I6Sf_VDU1GG-Xqvps"
+    }
+
+
+acceso denegado:
+   eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbGlhcyI6ImIiLCJtYWlsIjoiYiIsInBob25lIjoiZGZzZnNkZnNkIiwiaWF0IjoxNjUzMDEwNzU4fQ.MHgb-vrvjSrD_qsrMLyi2CE4hsTZ5RG5QZD3RZ8vJwgA
+   eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbGlhcyI6InQiLCJtYWlsIjoiYSIsInBob25lIjoidCIsImlhdCI6MTY1MzAwMjEyMH0.sbUeP-9kJYgRjVAs404AOz1bswWMz_7H6HeiGk6XaVo
+    
+ADMIN:
+   token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImphbG9uc29tb2NrMjJAb3V0bG9vay5jb20iLCJpYXQiOjE2NTQ4Mjg1NTN9.OM729dZ2-yNx3WasIhfFaZsNXJY_2oTzHA2Dr1IGLKA
+   
+
+plantilla para crear usuario:
+{
+  "alias": "paulo",
+  "mail": "bagog10785@steamoh.com",
+  "user_password": "Paulo3010",
+  "phone": "123456789",
+  "user_name": "paulo",
+  "user_last_name": "londra",
+  "location": "zzzzz",
+  "location_latitud": 0.0,
+  "location_longitud": 0.0,
+  "gender": "masc",
+  "date_of_birth": "22 / 4 / 1990"
+}
+
+rubros:
+{
+Plomeria
+Electricista
+Domestica
+acondicionado
+Gasista
+}
+
+-------------
+
+
+{
+    "mail": "xikaga1791@nzaif.com",
+    "user_password": "Absu3010"
+}
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbGlhcyI6InBhdWxvMjMiLCJtYWlsIjoieGlrYWdhMTc5MUBuemFpZi5jb20iLCJwaG9uZSI6IjEyMzQ1Njc4OSIsImlhdCI6MTY1NTkzNzY2MH0.QxltYsENYPAzjdhkn5i4dYRHR4IjV831w6dU4IPI-2U
+
+
+"mail": "bagog10785@steamoh.com",
+"user_password": "123456",
+token: 
+
+
+proppleeeee2@yopmail.com
+654321
+token: 
